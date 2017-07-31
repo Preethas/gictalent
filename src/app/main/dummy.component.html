@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="backgroundpanel col-sm-5 center_div bckcolorPanel">
+      <form class="form-horizontal">
+        <div class="form-group col-sm-12">
+          <label for="username">Username</label>
+          <input name="username"[(ngModel)]="username" type="text" class="form-control borderLeft" id="username"
+                 placeholder="Enter name">
+        </div>
+        <div class="form-group col-sm-12">
+          <label for="pwd">Password</label>
+          <input name="pwd" [(ngModel)]="pwd" type="password" class="form-control borderLeft" id="pwd" placeholder="Password">
+        </div>
+        <div class="form-group col-sm-3">
+          <button (click)=login() class="btn btn-success btn-small">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

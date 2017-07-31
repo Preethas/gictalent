@@ -1,1 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+  background-color: white;
+}
+.margin-top-10{
+  margin-top: 10px !important;
+}
+
+.backgroundpanel{
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px 5px 5px 5px;
+  border: solid 1px lightgray;
+  border-radius: 25px 25px 25px 25px;
+  font-size: 12px;
+}
+
+.bckcolorPanel {
+  background-color: whitesmoke;
+}
+
+.list{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.searchBar {
+   color:white;
+   min-height: 40px;
+   font-size: 12px;
+   padding:10px;
+   background: linear-gradient(45deg,#FF7F50 0,#FFA500 100%);
+}
+
+
+.footer{
+  position: absolute;
+  bottom: 0px;
+  width:100%;
+  min-height:40px;
+  background-color: whitesmoke;
+}
+
+.chip {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 0 15px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 40px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
+
+.smallTxt{
+  color:#2f92bd !important;
+}
+
+.searchResult{
+  padding : 15px 15px 15px 15px;
+  margin-top:5px;
+  font-size: 12px;
+  border : 1px solid cornsilk;
+  background-color: whitesmoke;
+}
+
+.borderLeft{
+  border-left: 5px solid #FF7F50;
+}
+
+.color-green{
+  color:#b9f6ca;
+}
+
+.color-blue{
+  color:#42A5F5;
+}
+
+.margin-left-10{
+  margin-left: 10px;
+}
+
+.category:hover{
+  font-weight:bold;
+  color:#FF7F50;
+  cursor: pointer;
+}
+
+.center_div{
+  margin: 0 auto;
+  margin-top: 50px;
+  width:95% /* value of your choice which suits your alignment */
+}
+
+.leftborderDiv{
+  border-left: 1px solid lightgray;
+}

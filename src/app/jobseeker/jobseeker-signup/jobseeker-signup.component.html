@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="row">
+
+
+    <div *ngIf=isStep(1) class="backgroundpanel col-sm-5 center_div bckcolorPanel">
+      <form class="form-horizontal">
+        <div class="form-group col-sm-12">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control borderLeft" id="email" aria-describedby="emailHelp"
+                 placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted smallTxt">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group col-sm-12">
+          <label for="pwd">Password</label>
+          <input type="password" class="form-control borderLeft" id="pwd" placeholder="Password">
+        </div>
+        <div class="form-group col-sm-3 float-right">
+          <button (click)=next() class="btn btn-success btn-small">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div *ngIf=isStep(2) class="backgroundpanel col-sm-5 center_div bckcolorPanel">
+    <form class="form-horizontal">
+      <div class="form-group col-sm-12">
+        <label for="code">Code</label>
+        <input type="email" class="form-control borderLeft" id="code" placeholder="000000">
+        <small id="codeHelp" class="form-text text-muted smallTxt">Check your email for code</small>
+      </div>
+      <div class="form-group col-sm-12">
+        <button (click)=prev() class="btn btn-default">Previous</button>
+        <button (click)=next() class="btn btn-success">Next</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Step 3 -->
+  <div *ngIf=isStep(3) class="backgroundpanel col-sm-5 center_div bckcolorPanel">
+    <form class="form-horizontal">
+      <div class="form-group col-sm-12">
+        <fieldset class="form-group">
+          <label>Gender</label>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optionsRadios" id="radio1" value="male"
+                     checked>
+              Male
+            </label>
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optionsRadios" id="radio2" value="female">
+              Female
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <label for="currentCompany">Current Company</label>
+        <input class="form-control borderLeft" id="currentCompany" placeholder="Current Company">
+      </div>
+
+      <div class="form-group col-sm-12">
+        <label for="gic">GIC</label>
+        <input class="form-control borderLeft" id="gic" placeholder="GIC worked for">
+      </div>
+
+
+      <div class="form-group col-sm-12">
+        <button (click)=prev() class="btn btn-default">Previous</button>
+        <button (click)=next() class="btn btn-success">Next</button>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- Step 4 -->
+  <div *ngIf=isStep(4) class="backgroundpanel col-sm-5 center_div bckcolorPanel">
+    <form class="form-horizontal">
+
+      <div class="form-group col-sm-12">
+          <label for="skill">Skill</label>
+          <input id="skill" class="form-control borderLeft" ng2-auto-complete
+                 [formControl]="data"
+                 [source]="dataArr"
+                 [list-formatter]="autocompleListFormatter"
+                 value-property-name="id"
+                 max-num-list=15
+                 display-property-name="name"
+                 placeholder="Search"
+                 (keyup.enter)="addItem(data)"
+          >
+        <small id="skillHelp" class="form-text text-muted smallTxt">
+          Press enter after selecting a skill , Enter upto 10 skills
+        </small>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <br/>
+          <span class="chip margin-10" *ngFor="let data of itemsArr">
+      {{data.name}}
+      <i class="fa fa-times red" (click)="deleteItem(data)"></i>
+      </span>
+          <span *ngIf="itemsArr.length"><hr/></span>
+        </div>
+      </div>
+      <div class="form-group col-sm-12">
+        <button (click)=prev() class="btn btn-default">Previous</button>
+        <button (click)=submit() class="btn btn-success">Finish</button>
+      </div>
+    </form>
+  </div>
+
+
+</div>
