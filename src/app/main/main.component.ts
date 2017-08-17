@@ -11,10 +11,18 @@ export class MainComponent implements OnInit {
 
   username:string;
   pwd:string;
+  searchKey = "";
 
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  buttonMessage(message,t){
+    console.log("main" + message);
+    this.searchKey = message;
+    t.select('search');
+
   }
 
   login(){

@@ -1,46 +1,38 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">GIC TALENT</a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="jobseeker">Job seeker registration <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="jobposter">Recruiter registration</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input [(ngModel)]="username" name="username" class="form-control mr-sm-2" type="text" placeholder="Username">
-      <input [(ngModel)]="pwd" name="pwd" class="form-control mr-sm-2" type="text" placeholder="Password">
-      <button class="btn btn-outline-success my-2 my-sm-0" (click)="login()">Login</button>
-    </form>
-  </div>
-</nav>
 
-<div class="main">
-  <div class="row">
-    <div class="col-sm-8">
-    <app-graph></app-graph>
-    </div>
-  </div>
+<div class="container tabContainer">
+
+      <ngb-tabset #t="ngbTabset">
+        <ngb-tab title="Home">
+          <ng-template ngbTabContent>
+            <app-home  (emitEvent)="buttonMessage($event,t)"></app-home>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+          <ng-template ngbTabTitle><b>About</b> us</ng-template>
+          <ng-template ngbTabContent>
+            <app-about></app-about>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Company" >
+          <ng-template ngbTabContent>
+           <app-company></app-company>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Job Seeker" >
+          <ng-template ngbTabContent>
+            <app-job-seeker></app-job-seeker>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Search" id="search">
+          <ng-template ngbTabContent>
+            <app-search [searchKey]="searchKey"></app-search>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+
 </div>
 
-<footer class="footer">
-  <div class="row float-right margin-top-10">
-    <div class="col-sm-5">
-      Contact
-    </div>
-    <div class="col-sm-7">
-      About us
-    </div>
-  </div>
-</footer>
 
 
 

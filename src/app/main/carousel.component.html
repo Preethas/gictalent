@@ -1,0 +1,25 @@
+<div
+  ng2-carouselamos
+  [width]="800"
+  [items]="items"
+  [$item]="itemTemplate"
+  [$prev]="prevTemplate"
+  [$next]="nextTemplate"
+  (onSelectedItem)="selectItem($event)"
+></div>
+
+
+<ng-template #prevTemplate>
+  <img src="assets/prev.png" id="prev"/>
+</ng-template>
+
+<ng-template #nextTemplate>
+  <img src="assets/next.png" id="next"/>
+</ng-template>
+
+<ng-template let-item let-i="index" #itemTemplate>
+  <div class="borderedDiv" style="min-width: 200px">
+   {{item.name}}
+  </div>
+</ng-template>
+
